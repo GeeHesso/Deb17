@@ -1,8 +1,21 @@
 # Compute the correlation coefficient between initial and final winding number for a Kuramoto cycle of length n.
 
 # Load simulators
-include("~/LFNS/data/scripts/initialize.jl")
-include("~/LFNS/data/scripts/get_rgb.jl")
+using PyPlot, JLD
+
+# Color management
+function get_rgb(v::Float64,vmin::Float64,vmax::Float64)
+	col = (v-vmin)/(vmax-vmin)
+	if col <= .25
+		return (0,col*4,1)
+	elseif col <=.5
+		return (0,1,2-col*4)
+	elseif col <=.75
+		return (col*4-2,1,0)
+	else
+		return (1,4-col*4,0)
+	end
+end
 
 # Load data
 d1 = load("os_83_15.jld")

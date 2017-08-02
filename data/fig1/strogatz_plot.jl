@@ -1,7 +1,6 @@
 # Plots the distribution of winding numbers of random initial conditions and the corresponding final state for a Kuramoto cycle of length n, together with a least squares zero-mean gaussian fit. 
 
-# Load simulators
-include("~/LFNS/data/scripts/initialize.jl")
+using JLD, PyPlot
 
 # Load data
 d1 = load("os_83_15.jld")
