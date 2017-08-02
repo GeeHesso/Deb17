@@ -2,8 +2,8 @@
 
 ## List of files:
 * fig5.jl
-* ofpa_83_$q_$beta_$idx.jld
-* ofpa.jld
+* data/ofpa_83_$q_$beta_$idx.jld
+* data/ofpa.jld
 	
 ## Files description:
 * fig5.jl: Generates the plot of Fig. 5. Gives the perturbation amplitude (alpha) such that 70% of the perturbed states converge back to the initial fixed point with respect to the winding number (q), for different random frequencies widths (beta).

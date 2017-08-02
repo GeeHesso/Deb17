@@ -10,7 +10,7 @@ end
 
 cols = ["b","g","r","c","m"]
 
-data1 = load("ofpa.jld")
+data1 = load("data/ofpa.jld")
 n = data1["n"]
 widths = data1["widths"]
 fidxs = [2,]
@@ -42,8 +42,8 @@ for q in 0:qmax
 	for w in widths
 		as = Array{Float64,1}()
 		for j in fidxs
-			if length(findin(files,["ofpa_$n\_$q\_$w\_$j.jld"])) > 0
-				data = load("ofpa_$n\_$q\_$w\_$j.jld")
+			if length(findin(files,["data/ofpa_$n\_$q\_$w\_$j.jld"])) > 0
+				data = load("data/ofpa_$n\_$q\_$w\_$j.jld")
 				as = [as;data["alphas_c"]]
 			else
 # If the file does not exist, it means that the fixed point was not found, i.e. we consider it has volume zeros		
