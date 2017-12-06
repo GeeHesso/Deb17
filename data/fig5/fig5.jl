@@ -21,7 +21,7 @@ tau = .7
 
 a_t = zeros(Float64,length(widths)+1,qmax+1)
 params = [0;collect(linspace(0,1,10000))]
-files = readdir()
+files = readdir("./data")
 
 figure(88,(7,5.5))
 
@@ -42,7 +42,7 @@ for q in 0:qmax
 	for w in widths
 		as = Array{Float64,1}()
 		for j in fidxs
-			if length(findin(files,["data/ofpa_$n\_$q\_$w\_$j.jld"])) > 0
+			if length(findin(files,["ofpa_$n\_$q\_$w\_$j.jld"])) > 0
 				data = load("data/ofpa_$n\_$q\_$w\_$j.jld")
 				as = [as;data["alphas_c"]]
 			else
